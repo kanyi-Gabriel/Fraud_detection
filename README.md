@@ -2,4 +2,4 @@
 
 ## Repository Structure
 
-## St up and installation
+## Set up and installation
