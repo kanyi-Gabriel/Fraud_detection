@@ -3,3 +3,5 @@
 ## Repository Structure
 
 ## Set up and installation
+
+## Insight
