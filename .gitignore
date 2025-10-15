@@ -58,3 +58,9 @@ predictions/
 # Checkpoints for HuggingFace, PyTorch Lightning, etc.
 checkpoint/
 checkpoints/
+<<<<<<< Updated upstream
+=======
+myenv/
+myenv/
+myenv/
+>>>>>>> Stashed changes
