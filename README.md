@@ -4,6 +4,8 @@
 
 ## Repository Structure
 
+## Dashboard
+
 ## Set up and installation
 
 ## Insight
