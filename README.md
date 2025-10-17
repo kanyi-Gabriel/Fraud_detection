@@ -97,18 +97,4 @@ Two models were developed and evaluated. The advanced model using SMOTE and Rand
 
 **Recommendation:** For deployment, the **SMOTE + Random Forest** model (`smote_pipe` in the notebook) should be trained and serialized, as it provides a much more reliable prediction.
 
-## Future Improvements
 
-* **Hyperparameter Tuning:** Use `GridSearchCV` or `RandomizedSearchCV` to find the optimal parameters for the Random Forest model.
-* **Try Other Models:** Experiment with gradient boosting models like XGBoost or LightGBM, which often perform well on imbalanced data.
-* **Frontend Enhancements:** Improve the UI/UX of the web form.
-* **Containerization:** Dockerize the application for easier deployment and scalability.
-## Project Overview
-
-## Repository Structure
-
-## Dashboard
-
-## Set up and installation
-
-## Insight
