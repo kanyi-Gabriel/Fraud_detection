@@ -52,7 +52,7 @@ Follow these steps to set up the project locally.
 
 **1. Clone the Repository**
 ```bash
-git clone [https://github.com/your-username/fraud_detection.git](https://github.com/your-username/fraud_detection.git)
+git clone [https://github.com/your-username/fraud_detection.git](https://github.com/kanyi-Gabriel/fraud_detection.git)
 cd fraud_detection
 ```
 
