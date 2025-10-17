@@ -17,15 +17,17 @@ def predict_view(request):
         # ... your feature collection and prediction logic ...
         
         features = []
+        
+        amount = float(request.POST.get('Amount', 0))
+        Amount_log = np.log1p(amount)
+        features.append(Amount_log)
+
+        hour = int(request.POST.get('Hourly', 0))
+        features.append(hour)
+
         for i in range(1, 29):
             feature_value = float(request.POST.get(f'V{i}', 0))
             features.append(feature_value)
-        
-        amount = float(request.POST.get('Amount', 0))
-        features.append(amount)
-
-        class_n = int(request.POST.get('Class', 0))
-        features.append(class_n)
 
         prediction = pipeline.predict([features])[0]
         prediction_proba = pipeline.predict_proba([features])[0][1]
