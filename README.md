@@ -28,6 +28,9 @@ The project uses the "Credit Card Fraud Detection" dataset from Kaggle.
 ```
 card_fraud/
 │
+├── data/      # csv file
+│   ├── credit_card.csv
+│
 ├── fraud_detection/      # Django Project Directory
 │   ├── manage.py
 │   ├── fraud_detection/  # Project settings
@@ -43,6 +46,8 @@ card_fraud/
 │
 ├── fraud.ipynb           # Jupyter Notebook for EDA and Model Training
 ├── myenv/                  # Virtual Environment
+├── .gitignore
+├── .gitattributes
 └── README.md
 ```
 
