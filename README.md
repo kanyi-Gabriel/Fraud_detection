@@ -48,6 +48,8 @@ card_fraud/
 ├── myenv/                  # Virtual Environment
 ├── .gitignore
 ├── .gitattributes
+├── LICENCE
+├── requirements.txt
 └── README.md
 ```
 
