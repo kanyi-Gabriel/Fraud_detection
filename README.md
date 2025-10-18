@@ -59,8 +59,8 @@ Follow these steps to set up the project locally.
 
 **1. Clone the Repository**
 ```bash
-git clone [https://github.com/your-username/fraud_detection.git](https://github.com/kanyi-Gabriel/fraud_detection.git)
-cd fraud_detection
+git clone https://github.com/kanyi-Gabriel/fraud_detection_django_app.git
+cd fraud_detection_django_app
 ```
 
 **2. Create and Activate Virtual Environment**
