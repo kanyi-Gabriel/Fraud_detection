@@ -29,7 +29,7 @@ The project uses the "Credit Card Fraud Detection" dataset from Kaggle.
 Fraud_detection_django_app/
 │
 ├── data/      # csv file
-│   ├── credit_card.csv
+│   ├── creditcard.csv
 │
 ├── fraud_detection/      # Django Project Directory
 │   ├── manage.py
