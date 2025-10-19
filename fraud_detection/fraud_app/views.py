@@ -5,7 +5,7 @@ import os
 from django.conf import settings 
 from django.shortcuts import render 
 # Construct the absolute path to the model file 
-model_path = os.path.join(settings.BASE_DIR, 'ml_models', 'fraud_detection_pipe.pkl') 
+model_path = os.path.join(settings.BASE_DIR, 'ml_models', 'fraud_detection_smote_rf.pkl') 
 # load the trained model pipeline 
 pipeline = joblib.load(model_path)
 
