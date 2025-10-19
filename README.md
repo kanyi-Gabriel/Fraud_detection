@@ -10,6 +10,12 @@ This project is a Django-based web application that serves a machine learning mo
 
 The primary goal is to build a reliable classifier to distinguish between legitimate and fraudulent transactions. The project tackles the core challenge of extreme class imbalance using techniques like SMOTE and evaluates models using appropriate metrics like Average Precision.
 
+## Project Demo / Screenshots
+
+Below is a screenshot of the main user interface for the Fraud Detection App. Users can input the 30 required transaction features (`V1`-`V28`, `Amount`, and `Hourly`) into the form. Upon submission, the model returns a prediction of "Legitimate" or "Fraudulent" along with a confidence score indicating the probability of fraud.
+
+![Fraud Detection App Dashboard](images/dashboard.png)
+
 ### Features
 * **Exploratory Data Analysis (EDA)** to understand data distributions and class imbalance.
 * **Feature Engineering** to create more predictive features from existing data (`Amount_log`, `Hourly`).
