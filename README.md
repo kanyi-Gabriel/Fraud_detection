@@ -14,8 +14,8 @@ The primary goal is to build a reliable classifier to distinguish between legiti
 
 Below is a screenshot of the main user interface for the Fraud Detection App. Users can input the 30 required transaction features (`V1`-`V28`, `Amount`, and `Hourly`) into the form. Upon submission, the model returns a prediction of "Legitimate" or "Fraudulent" along with a confidence score indicating the probability of fraud.
 
-![Fraud Detection App Dashboard](images/dashboard.jpg)
-![Fraud Detection App Dashboard](images/dashboard1.jpg)
+![Fraud Detection App Dashboard](images/dashboard3.jpg)
+![Fraud Detection App Dashboard](images/dashboard2.jpg)
 
 ### Features
 * **Exploratory Data Analysis (EDA)** to understand data distributions and class imbalance.
