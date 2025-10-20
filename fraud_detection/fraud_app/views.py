@@ -1,9 +1,11 @@
-# fraud_app/views.py
+# Import necessary libraries
+import pandas as pd
 import joblib 
 import numpy as np 
 import os 
 from django.conf import settings 
 from django.shortcuts import render 
+
 # Construct the absolute path to the model file 
 model_path = os.path.join(settings.BASE_DIR, 'ml_models', 'fraud_detection_smote_rf.pkl') 
 # load the trained model pipeline 
@@ -14,26 +16,37 @@ def predict_view(request):
         'v_range': range(1, 29)  # Add this range for the template loop
     }
     if request.method == "POST":
-        # ... your feature collection and prediction logic ...
+        # Get features from the form
+        features_dict = {}
         
-        features = []
-        
+        # Log-transform the Amount feature
         amount = float(request.POST.get('Amount', 0))
-        Amount_log = np.log1p(amount)
-        features.append(Amount_log)
-
-        hour = int(request.POST.get('Hourly', 0))
-        features.append(hour)
-
+        features_dict["Amount_log"] = np.log1p(amount)
+        features_dict["Hourly"] = int(request.POST.get('Hourly', 0))
         for i in range(1, 29):
-            feature_value = float(request.POST.get(f'V{i}', 0))
-            features.append(feature_value)
+            features_dict[f'V{i}'] = float(request.POST.get(f'V{i}', 0))
+        
 
-        prediction = pipeline.predict([features])[0]
-        prediction_proba = pipeline.predict_proba([features])[0][1]
+       # Convert dictionary to pd DataFrame
+        input_df = pd.DataFrame([features_dict])
 
-        result = "Fraudulent" if prediction == 1 else "Legitimate"
-        confidence = f"{prediction_proba * 100:.2f}%"
+        # To ensure the order of columns matches the training data      
+        training_column = ["Amount_log", "Hourly"] + [f'V{i}' for i in range(1, 29)]
+        input_df = input_df[training_column]
+
+        # Make prediction
+        prediction = pipeline.predict(input_df)
+        prediction_proba = pipeline.predict_proba(input_df) 
+
+        # Get predicted class( 0 for Legitimate, 1 for Fraudulent) and confidence
+        predicted_class = prediction[0]
+
+        # Get the probability of the predicted class
+        confidence_score = prediction_proba[0][predicted_class]
+
+        # Set result and confidence in human-readable format
+        result = "Fraudulent" if predicted_class == 1 else "Legitimate"
+        confidence = f"{float(confidence_score) * 100:.2f}%"
 
         # Update context with results
         context['result'] = result
