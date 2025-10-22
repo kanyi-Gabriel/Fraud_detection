@@ -36,8 +36,6 @@ The project uses the "Credit Card Fraud Detection" dataset from Kaggle.
 Fraud_detection_django_app/
 │
 ├── images/      # csv file
-│   ├── dashboard.jpg
-│   ├── dashboard1.jpg
 │   ├── dashboard2.jpg
 │   └── dashboard3.jpg
 │
