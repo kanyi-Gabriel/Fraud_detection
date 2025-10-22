@@ -53,7 +53,8 @@ Fraud_detection_django_app/
 │   │   ├── urls.py
 │   │   └── views.py
 │   └── ml_models/
-│       └── fraud_detection_pipe.pkl  # Serialized ML model
+│       ├── fraud_detection_smote_rf.pkl # RandomForest model
+│       └── fraud_detection_pipe.pkl  # Logistic Model
 │
 ├── fraud.ipynb           # Jupyter Notebook for EDA and Model Training
 ├── myenv/                  # Virtual Environment
