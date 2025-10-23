@@ -93,7 +93,7 @@ pip install -r requirements.txt
 ```
 
 **4. Place the Model File**
-Ensure your trained model (`fraud_detection_pipe.pkl`) is placed inside the `card_fraud/fraud_detection/ml_models/` directory.
+Ensure your trained models (`fraud_detection_pipe.pkl`, `fraud_detection_smote_rf.pkl`) are placed inside the `card_fraud/fraud_detection/ml_models/` directory.
 
 ## Running the Application
 
