@@ -1,0 +1,24 @@
+# .dockerignore
+
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Virtual environment
+myenv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Notebook Checkpoints
+.ipynb_checkpoints/
+
+# OS files (optional)
+.DS_Store
+Thumbs.db
