@@ -61,6 +61,9 @@ Fraud_detection_django_app/
 ├── .gitignore
 ├── .gitattributes
 ├── LICENCE
+├── Dockerfile
+├── .dokerignore
+├── docker-compose.yml
 ├── requirements.txt
 └── README.md
 ```
