@@ -25,10 +25,5 @@ WORKDIR /app/fraud_detection
 # Expose port 8000 to allow communication to/from server
 EXPOSE 8000
 
-# Command to run the application using Gunicorn (more production-ready)
-# If you don't have Gunicorn, you can use: CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-# But first, add 'gunicorn' to your requirements.txt and rebuild
-# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "fraud_detection.wsgi:application"]
-
-# For now, let's stick with the development server:
+# Define the command to run the Django development server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
