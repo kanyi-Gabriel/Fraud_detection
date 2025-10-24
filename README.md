@@ -60,9 +60,9 @@ Fraud_detection_django_app/
 ├── myenv/                  # Virtual Environment
 ├── .gitignore
 ├── .gitattributes
+├── .dokerignore
 ├── LICENCE
 ├── Dockerfile
-├── .dokerignore
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
