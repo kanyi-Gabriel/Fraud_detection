@@ -82,7 +82,7 @@ This method uses Docker and Docker Compose to build and run the application in a
 **Steps:**
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/your-username/fraud_detection.git](https://github.com/kanyi-Gabriel/fraud_detection_django_app.git)
+    git clone https://github.com/kanyi-Gabriel/fraud_detection_django_app.git
     cd fraud_detection
     ```
 2.  **Place the Model File:** Ensure your preferred trained model (`.pkl` file, e.g., `fraud_detection_smote_rf.pkl`) is inside `card_fraud/fraud_detection/ml_models/`. **Important:** Make sure the `model_path` variable in `fraud_app/views.py` points to the correct `.pkl` file you want to use.
@@ -105,7 +105,7 @@ This method runs the application directly on your machine using a Python virtual
 **Steps:**
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/your-username/fraud_detection.git](https://github.com/kanyi-Gabriel/fraud_detection_django_app.git)
+    git clone https://github.com/kanyi-Gabriel/fraud_detection_django_app.git
     cd fraud_detection
     ```
 2.  **Create and Activate Virtual Environment:**
