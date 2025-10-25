@@ -24,6 +24,7 @@ Below is a screenshot of the main user interface for the Fraud Detection App. Us
 * **Baseline Model** (Logistic Regression) to establish an initial performance benchmark.
 * **Advanced Model** (SMOTE + Random Forest) for superior performance on the imbalanced data.
 * **Django API** to serve the trained model and provide real-time predictions via a web interface.
+* **Docker Support** for easy setup and deployment using containers.
 
 ## Dataset
 
@@ -69,55 +70,69 @@ Fraud_detection_django_app/
 └── README.md
 ```
 
-## Setup and Installation
+## Running the Application (Choose One Method)
 
-Follow these steps to set up the project locally.
+### Method 1: Running with Docker (Recommended) 🐳
 
-**1. Clone the Repository**
-```bash
-git clone https://github.com/kanyi-Gabriel/fraud_detection_django_app.git
-cd fraud_detection_django_app
-```
+This method uses Docker and Docker Compose to build and run the application in an isolated container.
 
-**2. Create and Activate Virtual Environment**
-```bash
-python3 -m venv myenv
-source myenv/bin/activate
-```
-*(On Windows, use `myenv\Scripts\activate`)*
+**Prerequisites:**
+* Docker Desktop installed and running.
 
-**3. Install Dependencies**
-First, create a `requirements.txt` file from your active environment:
-```bash
-pip freeze > requirements.txt
-```
-Then, install the required packages:
-```bash
-pip install -r requirements.txt
-```
+**Steps:**
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/your-username/fraud_detection.git](https://github.com/kanyi-Gabriel/fraud_detection_django_app.git)
+    cd fraud_detection
+    ```
+2.  **Place the Model File:** Ensure your preferred trained model (`.pkl` file, e.g., `fraud_detection_smote_rf.pkl`) is inside `card_fraud/fraud_detection/ml_models/`. **Important:** Make sure the `model_path` variable in `fraud_app/views.py` points to the correct `.pkl` file you want to use.
+3.  **Build and Run with Docker Compose:**
+    ```bash
+    docker-compose up --build
+    ```
+    *(The `--build` flag is only needed the first time or if you change `Dockerfile` or `requirements.txt`)*
 
-**4. Place the Model File**
-Ensure your trained models (`fraud_detection_pipe.pkl`, `fraud_detection_smote_rf.pkl`) are placed inside the `card_fraud/fraud_detection/ml_models/` directory.
+The application will be accessible at `http://localhost:8000/`. Press `Ctrl+C` in the terminal to stop the container.
 
-## Running the Application
+---
+### Method 2: Running Locally with Virtual Environment
 
-Once the setup is complete, you can run the Django development server.
+This method runs the application directly on your machine using a Python virtual environment.
 
-```bash
-cd fraud_detection/
-python3 manage.py runserver
-```
-The application will be available at `http://127.0.0.1:8000/`.
+**Prerequisites:**
+* Python 3.12+ installed.
+
+**Steps:**
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/your-username/fraud_detection.git](https://github.com/kanyi-Gabriel/fraud_detection_django_app.git)
+    cd fraud_detection
+    ```
+2.  **Create and Activate Virtual Environment:**
+    ```bash
+    python3 -m venv myenv
+    source myenv/bin/activate
+    ```
+    *(On Windows: `myenv\Scripts\activate`)*
+3.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Place the Model File:** Ensure your preferred trained model (`.pkl` file) is inside `card_fraud/fraud_detection/ml_models/` and that `fraud_app/views.py` points to it.
+5.  **Run the Django Server:**
+    ```bash
+    cd fraud_detection/
+    python3 manage.py runserver
+    ```
+
+The application will be accessible at `http://127.0.0.1:8000/`.
 
 ## Model Performance
 
-Two models were developed and evaluated. The advanced model using SMOTE and Random Forest showed significantly better performance, especially in handling the imbalanced nature of the data.
-
-| Model                               | Evaluation Metric     | Score (on Cross-Validation) |
-| ----------------------------------- | --------------------- | --------------------------- |
-| Logistic Regression (Baseline)      | Average Precision     | ~0.713                      |
+| Model                               | Evaluation Metric     | CV Score (Avg Precision) |
+| ----------------------------------- | --------------------- | ------------------------ |
+| Logistic Regression (Baseline)      | Average Precision     | ~0.713                   |
 | **SMOTE + Random Forest (Advanced)** | **Average Precision** | **~0.845** |
 
-**Recommendation:** For deployment, the **SMOTE + Random Forest** model (`smote_pipe` in the notebook) should be trained and serialized, as it provides a much more reliable prediction.
-
+**Recommendation:** Use the **SMOTE + Random Forest** model (`fraud_detection_smote_rf.pkl` if trained and saved) for better prediction accuracy and more meaningful confidence scores.
 
